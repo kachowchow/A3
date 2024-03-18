@@ -81,6 +81,7 @@ public class Main {
         Connection connection = null;
         PreparedStatement preStatement = null;
 
+        //connect and execute query
         try{
             connection = Connect();
             preStatement = connection.prepareStatement("UPDATE students SET email = ? WHERE student_id = ?");
@@ -91,6 +92,7 @@ public class Main {
             System.out.println(e);
         }
 
+        //close and disconnect
         try{
             if (preStatement != null)
                 preStatement.close();
@@ -104,6 +106,7 @@ public class Main {
         Connection connection = null;
         PreparedStatement preStatement = null;
 
+        //connect and execute query
         try{
             connection = Connect();
             preStatement = connection.prepareStatement("DELETE FROM students WHERE student_id = ?");
@@ -113,6 +116,7 @@ public class Main {
             System.out.println(e);
         }
 
+        //close and disconnect
         try{
             if (preStatement != null)
                 preStatement.close();
@@ -124,13 +128,13 @@ public class Main {
 
     public static void main(String[] args) {
         getAllStudents();
-        addStudent("Alice", "Johnson", "alice.johnson@example.com", Date.valueOf("2024-03-01"));
+        addStudent("Aidan", "Chow", "aidan.chow@example.com", Date.valueOf("2024-03-18"));
         System.out.println("After addStudent():");
         getAllStudents();
-        updateStudentEmail(1, "aidan.chow03@gmail.com");
+        updateStudentEmail(1, "update.email@example.com");
         System.out.println("After updateStudentEmail()");
         getAllStudents();
-        deleteStudent(6);
+        deleteStudent(4);
         System.out.println("After deleteStudent()");
         getAllStudents();
     }

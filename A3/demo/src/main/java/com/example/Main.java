@@ -3,9 +3,9 @@ import java.sql.*;
 
 public class Main {
 
-    private static String url = "jdbc:postgresql://localhost:5432/A3";
-    private static String user = "postgres";
-    private static String password = "admin";
+    static String url = "jdbc:postgresql://localhost:5432/A3";
+    static String user = "postgres";
+    static String password = "admin";
 
     //connect function
     public static Connection Connect() throws Exception{
